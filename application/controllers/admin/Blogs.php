@@ -137,4 +137,120 @@ class Blogs extends ME_Controller {
     $return['status'] = TRUE;
     $this->load->view('elements_default/json', compact('return'));
 	}
+
+	public function categories()
+	{	
+		$this->page['js'] = array();
+		$this->page['js'][]	= '/back/js/blogs_categories';
+
+		try {
+			$params['page'] = $this->page['title'] = 'Articles Categories';
+			$params['data'] = $this->blog_model->categories();;
+			$view = 'admin/blogs_categories_main';		
+		
+		}  catch (Exception $e) {
+			
+			$params['message'] = $e->getMessage();
+			$view = 'errors/admin_message';
+
+		}
+
+		$this->load->view($view,$params);
+	}
+
+	public function add_category()
+	{	
+		$this->page['js'] = array();
+		$this->page['js'][]	= '/back/js/blogs_categories';
+
+		try {
+
+			$params['categories'] = $this->blog_model->categories();
+			$params['page'] = $this->page['title'] = 'Add Category';
+			$view = 'admin/blogs_category_edit';
+
+		} catch (Exception $e) {
+
+			$params['message'] = $e->getMessage();
+			$view = 'errors/admin_message';
+		
+		}
+
+		$this->load->view($view,$params);
+	}
+
+	public function edit_category()
+	{	
+		$this->page['js'] = array();
+		$this->page['js'][]	= '/back/js/blogs_categories';
+
+		$category_id = $this->input->get('id',TRUE);
+
+		try {
+		
+			if (empty($category_id)) {
+				$error_message = 'Category Id is required';
+   			throw new Exception($error_message);
+			}
+
+			$params['id'] = $category_id;
+			$params['data'] = $this->blog_model->blog_category_by_id($category_id);
+			$page = 'Edit Category';
+			$params['page'] = $this->page['title'] = $page;
+			$view = 'admin/blogs_category_edit';
+
+		}  catch (Exception $e) {
+		
+			$params['message'] = $e->getMessage();
+			$view = 'errors/admin_message';
+	
+		}
+		
+		$this->load->view($view,$params);
+	}
+
+	public function save_blog_category()
+	{
+		$db = 'blog_categories';
+		$this->page['template'] = 'default_json.php';
+    $form_values = json_decode($this->input->post('form_values',TRUE));
+    
+    $category_name = !empty($form_values->name) ? $form_values->name : NULL;
+
+		$sql_values = array(
+		  'name' 		=> $category_name
+		);
+
+		if (!empty($category_name) && $this->blog_model->can_update_category($category_name)) {
+			if (empty($form_values->id)) {
+
+				$results = $this->blog_model->db_insert($db,$sql_values);
+
+	    } else {
+
+	    	$sql_values['id'] = $form_values->id;
+	    	$sql_values['db_name'] = $db;
+
+	      $results = $this->blog_model->db_update($sql_values);
+	    
+	    }
+		}
+
+    $return['status'] = TRUE;
+    $this->load->view('elements_default/json', compact('return'));
+	}
+
+	public function delete_blog_category()
+	{
+		$db = 'blog_categories';
+		$this->page['template'] = 'default_json.php';
+    $id = $this->input->post('id',TRUE);
+
+		if (!empty($id)) {
+        $results = $this->blog_model->db_delete($id,$db);
+    } 
+
+    $return['status'] = TRUE;
+    $this->load->view('elements_default/json', compact('return'));
+	}
 }

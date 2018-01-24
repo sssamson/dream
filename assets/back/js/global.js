@@ -222,7 +222,7 @@ error_modal = function() {
 
       },
       success : function(data) {
-        jQuery('.modal-title').html('Organization Audit Logs');
+        jQuery('.modal-title').html('Error');
         jQuery('.modal-body').html(data);
       },
       complete : function() {

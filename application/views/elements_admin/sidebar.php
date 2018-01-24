@@ -39,7 +39,7 @@
           <?php $section = 'blogs' ?>
           <?php $id = 'categories' ?>
           <li class="nav-item">
-            <a class="nav-link" data-url="<?= $id ?>" href="/admin/<?= $section ?>/?page=<?= $id ?>"><i class="icon-organization"></i> Categories</a>
+            <a class="nav-link" data-url="<?= $id ?>" href="/admin/<?= $section ?>/categories/?page=<?= $id ?>"><i class="icon-organization"></i> Categories</a>
           </li>
           <?php $id = 'blogs' ?>
           <li class="nav-item">

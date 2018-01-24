@@ -34,4 +34,18 @@ class Blog_model extends ME_Model
 		$query = $this->db->query($sql,array($category_id));
 		return  $query->row();
 	}
+
+	public function can_update_category($category_name)
+	{
+		$sql = "SELECT name FROM blog_categories WHERE name=?";
+		$query = $this->db->query($sql,array($category_name));
+		$result  = $query->num_rows();
+
+		if (empty($result)) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
 }
