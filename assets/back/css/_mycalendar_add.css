@@ -1,0 +1,3 @@
+#month_div table td.day.inactive:hover {
+  cursor: pointer;
+}

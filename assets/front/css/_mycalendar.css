@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+.has_event {
+  background-color: #dcd9d9;
+}
+
+.day_off {
+  background-color: #e5e5e5;
+}
+
+.weekend {
+  background-color: #ffcccc;
+}
+
+.past_date {
+  background-color: #f6f6f7;
+}
+
+.current {
+  background-color: #99c2ff;
+  border: 2px solid #ff1493 !important;
+}
+
+.cal-col {
+  position: relative;
+  display: inline-block;
+}
+
+.calendar-container .nav-link {
+  padding: .25rem .5rem;
+}
+
+.legend {
+  padding: 3px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.calendar-container {
+  padding-top: 20px;
+  font-weight: 100;
+}
+
+.calendar-container .nav-link {
+ font-weight: 400;
+}
+
+.calendar_views {
+  width: 135px;
+  margin: 0px auto;
+}
+
+#calendar-body {
+  padding: 0px;
+  border: 0px;
+}
+
+.calendar-title {
+  width: 150px;
+}
+
+h2.calendar-title {
+  white-space: nowrap;
+  font-size: 28px;
+  font-weight: 100;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: none;
+  text-align: left;
+}
+
+#calendar-body table {
+  width: 100%;
+  border-collapse: initial;
+}
+
+#calendar-body table th {
+  padding: 10px;
+  border: 1px solid #A8A8A8;
+  vertical-align: top;
+  background-color: #DCDCDC;
+}
+
+#month_div {
+  padding: 0px;
+  margin: 0px;
+}
+
+#month_div table td {
+  border: 1px solid #A8A8A8;
+  vertical-align: top;
+  width: 1.7%;
+  height: 91px;
+}
+
+#schedule_div table td {
+  border: 1px solid #A8A8A8;
+}
+
+#schedule_div table td.time {
+  font-size: 20px;
+  padding: 10px 40px;
+}
+
+#schedule_div table tr.hidden {
+  display:none;
+}
+
+#calendar-body table td .event {
+  padding: 3px;
+  color: #040404;
+  font-size: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.day {
+  
+}
+
+#month_div table td.day:hover {
+  border: 1px dashed #007bff;
+  cursor: pointer;
+}
+
+#month_div table td.day.inactive:hover {
+  cursor: not-allowed;
+}
+
+.dayvalue {
+  text-align: right;
+  padding: 5px 5px 0px 0px;
+  font-size: 20px;
+}
+
+.selected {
+  letter-spacing: 3px;
+  font-size: 25px;
+  padding: 20px;
+}
+
+#schedule_div table {
+  width: 100%;
+}
+
+#schedule_div td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.time {
+  width: 40%;
+  text-align: center;
+}
+
+.hour {
+  height: 55px;
+}
+
+.hour:hover {
+  background-color: #b3d1ff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hour.inactive:hover {
+  cursor: not-allowed;
+}
+
+.hour-selected {
+ background-color: #b3d1ff; 
+}
+
+.hour-selected:hover {
+  background-color: #b3d1ff;
+  cursor: auto;
+  font-weight: normal!important;
+}
+
+.cal-nav {
+  width: 130px;
+}
+
+.legend_desc {
+  width: 33%;
+  text-align: center;
+}
