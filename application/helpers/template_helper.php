@@ -2,34 +2,34 @@
 function output_java_script ($file_names)
 {
 	$html = '';
-	
-	if (!empty($file_names)) 
+
+	if (!empty($file_names))
 	{
 		foreach ($file_names as $name)
 		{
 			$html .= '<script src="/assets' . $name . '.js" type="text/javascript" charset="utf-8"></script>';
 		}
 	}
-	
+
 	return $html;
 }
 
 function output_css ($file_names)
 {
 	$html = '';
-	
-	if (!empty($file_names)) 
+
+	if (!empty($file_names))
 	{
 		foreach ($file_names as $name)
 		{
 			$html .= '<link href="/assets' . $name . '.css" rel="stylesheet" type="text/css" />';
 		}
 	}
-	
+
 	return $html;
 }
 
-function fa_icons() 
+function fa_icons()
 {
 	return array(
 		'fa-glass'                               => 'f000',
@@ -702,18 +702,18 @@ function get_month_options($month)
 	return $options;
 }
 
-function get_year_options($year) 
+function get_year_options($year)
 {
 	$options = '';
 	$current_year = date("Y");
 
 	for ($x = 0; $x <= 30; $x++) {
-		$options .= '<option '; 
+		$options .= '<option ';
 		$options .= 'value="'.$current_year.'"';
 		if ($year == $current_year) {
 			$options .= ' selected';
 		}
-		$options .= '>'.$current_year.'</option>';	
+		$options .= '>'.$current_year.'</option>';
 		$current_year++;
 
 	}
@@ -721,7 +721,7 @@ function get_year_options($year)
 	return $options;
 }
 
-function get_state_options($state) 
+function get_state_options($state)
 {
 
    $return_html =
@@ -777,7 +777,7 @@ function get_state_options($state)
     <option value="WI" '. (($state == 'WI') ? 'selected' : '') .'>Wisconsin</option>
     <option value="WY" '. (($state == 'WY') ? 'selected' : '') .'>Wyoming</option>';
 
-    return $return_html;                   
+    return $return_html;
 }
 
 function get_country_options($country)
@@ -1056,11 +1056,11 @@ function display_media($obj)
         $html = '<i class="fa '.$data.'"></i>';
         break;
 	}
-	
+
 	return $html;
 }
 
-function get_hours_range( $start = 0, $end = 86400, $step = 3600, $format = 'g:i a' ) 
+function get_hours_range( $start = 0, $end = 86400, $step = 3600, $format = 'g:i a' )
 {
   $times = array();
   foreach ( range( $start, $end, $step ) as $timestamp ) {
@@ -1076,7 +1076,7 @@ function hours_of_day_options($selected_value)
 {
 	$html = '';
 	$times = get_hours_range();
-	
+
 	foreach ($times as $time=>$readable_time) {
 		$html .= '<option value="'.$time.'"';
 		if ($selected_value == $time) {
@@ -1096,13 +1096,13 @@ function unix_add_hours($unix,$num_hours)
 		$advance = '+'.$num_hours.' hour';
 		$new_unix = strtotime($advance, $unix);
 	}
-	
+
 	return unix_to_date($new_unix);
 }
 
 function mdate_to_ddate($date)
 {
-	return date('Y-m-d H:i:s', strtotime($date));	
+	return date('Y-m-d H:i:s', strtotime($date));
 }
 
 function dbdate_to_date($dbdate)
@@ -1132,7 +1132,7 @@ function db_seperate_date($type,$dbdate)
 
 function dbdate_less_now($dbdate)
 {
-	if(strtotime($dbdate) > strtotime('now')){ 
+	if(strtotime($dbdate) > strtotime('now')){
 		return TRUE;
 	} else {
 		return FALSE;
@@ -1155,4 +1155,33 @@ function current_date()
 	}
 
 	return $format;
+}
+
+function set_error($code,$title,$message)
+{
+  $error = array();
+  $error['code']     = $code;
+  $error['title']    = $title;
+  $error['message']  = $message;
+
+	return $error;
+}
+
+function display_error($data)
+{
+	$html = '<div class="vertical-align text-center">
+		<div class="page-content page-error vertical-align-middle">
+			<header>
+			  <h1 class="animation-slide-top">'.(!empty($data['code']) ? $data['code'] : '').'</h1>
+			  <h4>'.(!empty($data['title']) ? $data['title'] : '').'</h4>';
+
+	if (!empty($data['message'])) {
+		$html .= '<p id="error_definition">'.$data['message'].'</p>';
+	}
+
+	$html .= '</header>
+		</div>
+	</div>';
+
+	return $html;
 }

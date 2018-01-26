@@ -3,7 +3,6 @@
 <script src="/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/assets/vendor/pace/pace.min.js"></script>
 <script src="/assets/vendor/formvalidator/jquery.form-validator.min.js"></script>
-<script src="/assets/vendor/webui-popover/jquery.webui-popover.min.js"></script>
 <script src="/assets/vendor/bootstrap-select/bootstrap-select.min.js"></script>
 <script src="/assets/vendor/datatables/DataTables-1.10.15/js/jquery.dataTables.min.js"></script>
 <script src="/assets/vendor/datatables/DataTables-1.10.15/js/dataTables.bootstrap.min.js"></script>
@@ -15,8 +14,8 @@
 <script src="/assets/vendor/summernote/summernote.js"></script>
 <script src="/assets/back/js/global.js"></script>
 
-<?php 
+<?php
 if (!empty($page['js'])) {
-	echo output_java_script($page['js']); 
+	echo output_java_script($page['js']);
 }
 ?>

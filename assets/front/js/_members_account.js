@@ -10,13 +10,13 @@ function Members() {
 Members.prototype = {
   bind_actions : function() {
     var self = this;
-    
+
     // form validator
     $.validate({
       modules: 'security',
-      form : '#data_form_password',
+      form : '#data_form_credentails',
       onSuccess : function($form) {
-        self.process_form('#data_form_password');
+        self.process_form('#data_form_credentails');
       }
     });
 
@@ -30,25 +30,22 @@ Members.prototype = {
   },
 
   process_form: function(div_id) {
-    jQuery('#login_error').hide();
     var self = this;
     var form_contents = {};
     jQuery.each(jQuery(div_id).serializeArray(), function(i, field) {
       form_contents[field.name] = field.value;
     });
-    if (div_id == '#data_form_password') {
-      self.save_form_password(form_contents);
+    if (div_id == '#data_form_credentails') {
+      self.save_form_credentails(form_contents);
     } else {
       self.save_form_account(form_contents);
     }
   },
 
-  save_form_password: function(form_contents) {
-
-    url = "/member/update_password";
+  save_form_credentails: function(form_contents) {
 
     jQuery.ajax({
-        url: url,
+        url: '/member/update_credentails',
         type: 'POST',
         dataType: 'json',
         data: {
@@ -60,13 +57,17 @@ Members.prototype = {
         success: function(data) {
           if (data.status == true) {
             jQuery('.modal-title').html('Updated');
-            jQuery('.modal-body').html('Password has been updated');
+            jQuery('.modal-body').html('Credentails has been updated');
             jQuery('#modal').modal('show');
           } else {
-
+            jQuery('.modal-title').html('Error');
+            jQuery('.modal-body').html(data.message);
+            jQuery('#modal').modal('show');
           }
         },
         complete : function() {
+          jQuery('#password_1').val('');
+          jQuery('#password_2').val('');
           after_send('#form_validate');
         }
     });
@@ -74,10 +75,8 @@ Members.prototype = {
 
   save_form_account: function(form_contents) {
 
-    url = "/member/login";
- 
     jQuery.ajax({
-        url: url,
+        url: '/member/update_account',
         type: 'POST',
         dataType: 'json',
         data: {
@@ -88,9 +87,9 @@ Members.prototype = {
         },
         success: function(data) {
           if (data.status == true) {
-            window.location.href = data.url;
-          } else {
-            jQuery('#login_error').show();
+            jQuery('.modal-title').html('Updated');
+            jQuery('.modal-body').html('Credentails has been updated');
+            jQuery('#modal').modal('show');
           }
         },
         complete : function() {

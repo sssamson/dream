@@ -4,7 +4,7 @@
       <?php
       if (!empty($page)) {
         echo '<h1>'.ucfirst($page).'</h1>';
-      } 
+      }
       ?>
     </div>
   </div>
@@ -15,10 +15,10 @@
         <div class="card-block">
           <div class="form-group">
             <label class="control-label"><b>Date</b>: </label>
-            <input 
-              value="<?= !empty($data['order']->date) ? $data['order']->date : ''  ?>" 
-              type="text" 
-              class="form-control" 
+            <input
+              value="<?= !empty($data['order']->date) ? $data['order']->date : ''  ?>"
+              type="text"
+              class="form-control"
               readonly>
           </div>
           <div class="form-group">
@@ -31,11 +31,11 @@
             </select>
           </div>
           <div class="form-group">
-            <button 
-              data-id="<?= $data['order']->id ?>" 
-              data-toggle="tooltip" 
-              title="Update Status" 
-              type="button" 
+            <button
+              data-id="<?= $data['order']->id ?>"
+              data-toggle="tooltip"
+              title="Update Status"
+              type="button"
               class="btn-loading btn btn-primary btn-sm update_status">
               <i class="fa fa-pencil" aria-hidden="true"></i> Update Status
             </button>
@@ -99,7 +99,7 @@
           <hr>
           <div class="row">
             <div class="col-3 label"><b>Address</b>: </div>
-            <div class="col-9"><?= $data['order']->address ?></div>
+            <div class="col-9"><?= $data['order']->street ?><br><?= $data['order']->state ?> <?= $data['order']->zip ?></div>
           </div>
           <hr>
         </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="/assets/img/favicon.png">
-    
+
     <title><?= $page['title'] ?></title>
     <?php
     $params = array();
@@ -14,7 +14,7 @@
   </head>
 
   <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
-    
+
     <?php $this->view('elements_admin/header',$params);?>
 
     <div class="app-body">
@@ -27,7 +27,7 @@
     </div>
 
     <?php $this->view('elements_admin/footer',$params) ?>
-    <?php $this->view('elements_default/modals',$params) ?>
-    <?php $this->view('elements_admin/_js',$params) ?>  
+    <?php $this->view('elements_admin/modals',$params) ?>
+    <?php $this->view('elements_admin/_js',$params) ?>
   </body>
 </html>

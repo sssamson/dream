@@ -8,10 +8,10 @@
     <link href="/assets/account/css/font-awesome.css" rel="stylesheet">
     <link href="/assets/vendor/bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/vendor/datatables/DataTables-1.10.15/css/dataTables.bootstrap.css" rel="stylesheet">
-
-    <?php 
+    <link href="/assets/front/css/_account.css" rel="stylesheet" type="text/css">
+    <?php
     if (!empty($page['css'])) {
-      echo output_css($page['css']); 
+      echo output_css($page['css']);
     }
     ?>
 
@@ -42,11 +42,13 @@
     <script src="/assets/vendor/select2/js/select2.min.js"></script>
     <script src="/assets/back/js/global.js"></script>
 
-    <?php 
+    <?php $this->view('elements_default/modals') ?>
+
+    <?php
     if (!empty($page['js'])) {
-      echo output_java_script($page['js']); 
+      echo output_java_script($page['js']);
     }
     ?>
-    <?php $this->view('elements_default/modals') ?>
+
   </body>
 </html>

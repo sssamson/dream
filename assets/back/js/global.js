@@ -52,11 +52,11 @@ $(document).ready(function($){
   }
   // Add class .active to current link
   $.navigation.find('a').each(function(){
-    
+
     var cUrl = getJsonFromUrl();
-    
+
     var current_id = $(this).data("url");
-    
+
     if (current_id==cUrl['page']) {
       $(this).addClass('active');
 
@@ -128,7 +128,7 @@ $(document).ready(function($){
       "order": [[ 0, "asc" ]],
       "responsive": true
   });
-  
+
   $('.table-min').DataTable({
       "paging":   false,
       "ordering": false,
@@ -214,22 +214,22 @@ is_empty = function(obj) {
 
 error_modal = function() {
   jQuery.ajax({
-      url: '/error',
+      url: '/admin/error',
       type: 'GET',
-      dataType: 'html',
+      dataType: 'json',
       data : {},
       beforeSend: function() {
 
       },
       success : function(data) {
         jQuery('.modal-title').html('Error');
-        jQuery('.modal-body').html(data);
+        jQuery('.modal-body').html(data.message);
       },
       complete : function() {
         jQuery('.ajax-loading').hide();
         jQuery('#modal').modal('show');
       }
-  });            
+  });
 };
 
 stripHtml = function(html) {
@@ -281,7 +281,7 @@ process_upload = function(form_id, media_id, type) {
   var formData = new FormData();
 
   //Grab just one file, since we are not allowing multiple file uploads
-  var file = files[0]; 
+  var file = files[0];
 
   //Check the file type
   if (!file.type.match('image.*')) {
@@ -293,6 +293,10 @@ process_upload = function(form_id, media_id, type) {
    // Add the file to the request.
   formData.append(media_id, file, file.name);
   formData.append('type', type);
-  
+
   return formData;
+}
+
+function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }

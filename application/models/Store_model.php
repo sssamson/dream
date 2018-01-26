@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Store_model extends ME_Model
-{	
+{
 	function __construct()
 	{
 		parent::__construct();
@@ -34,7 +34,7 @@ class Store_model extends ME_Model
 
 		$orders_array = array();
 		foreach ($orders as $index=>$order) {
-			$sql = "SELECT email, firstname, lastname, phone, address FROM clients WHERE id=".$order->client_id;
+			$sql = "SELECT email, firstname, lastname, phone, street, state, zip FROM clients WHERE id=".$order->client_id;
 			$query = $this->db->query($sql);
 			$client = $query->row();
 			$orders_array[] = array_merge((array)$order, (array)$client);
@@ -45,11 +45,11 @@ class Store_model extends ME_Model
 
 	public function order_by_id($id)
 	{
-		$sql = "SELECT orders.*, clients.email, clients.firstname, clients.lastname, clients.phone, clients.address  
+		$sql = "SELECT orders.*, clients.email, clients.firstname, clients.lastname, clients.phone, clients.street, clients.state, clients.zip
 						FROM orders
 						LEFT JOIN clients ON orders.client_id = clients.id
 						WHERE orders.id=?";
-		
+
 		$query = $this->db->query($sql,array($id));
 		$order = $query->row();
 		$products = array();

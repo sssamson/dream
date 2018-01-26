@@ -14,9 +14,8 @@
 
   <body>
     <?= $page['content'] ?>
-    
-    <?php $this->view('elements_default/_js',$params) ?>  
-    <?php $this->view('elements_default/modals',$params) ?>  
+
+    <?php $this->view('elements_default/_js',$params) ?>
   </body>
-  
+
 </html>

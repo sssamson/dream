@@ -13,7 +13,7 @@ Blog.prototype = {
 
     if ( $( "#summernote" ).length ) {
       $('#summernote').summernote({
-        height: 300,
+        height: 500,
         callbacks: {
           onImageUpload: function(files) {
             self.save_image(files[0],'textarea')
@@ -36,7 +36,7 @@ Blog.prototype = {
     if (datatable_instance !== undefined) {
       datatable_instance.order( [ 0, 'desc' ] ).draw();
     }
-    
+
     //confirm delete
     $(document).on('click', '.delete_confirm', function() {
       $('#modal_warning').modal('hide');
@@ -100,17 +100,17 @@ Blog.prototype = {
         if (!is_empty(data.file_name)) {
           if (process_type == 'form') {
             self.process_form(data.file_name);
-          } else if (process_type == 'textarea') { 
+          } else if (process_type == 'textarea') {
             var filename = data.file_name;
             var url = '/assets/img/blog/'+filename;
             $('#summernote').summernote('insertImage', url, filename);
           }
         } else {
-          var message = 'An error occurred while uploading the file. Try again';  
+          var message = 'An error occurred while uploading the file. Try again';
           jQuery('#error').html(message);
         }
       } else {
-        var message = 'An error occurred while uploading the file. Try again';  
+        var message = 'An error occurred while uploading the file. Try again';
           jQuery('#error').html(message);
       }
     };
@@ -134,7 +134,7 @@ Blog.prototype = {
     // Add the file to the request.
     formData.append(media_id, file, file.name);
     formData.append('type', type);
-    
+
     return formData;
   },
 
@@ -144,8 +144,7 @@ Blog.prototype = {
     var form_contents = {};
     jQuery.each(jQuery('#data_form').serializeArray(), function(i, field) {
       if (field.name == 'content') {
-        form_contents['content'] = $('#summernote').summernote('code');
-        
+        form_contents['content'] = htmlEntities($('#summernote').summernote('code'));
       } else {
         form_contents[field.name] = field.value;
       }
@@ -159,11 +158,8 @@ Blog.prototype = {
   },
 
   save_form: function(form_contents) {
-
-    var uurl = '/admin/blogs/save_blog';
-
     jQuery.ajax({
-        url: uurl,
+        url: '/admin/blogs/save_blog',
         type: 'POST',
         dataType: 'json',
         data: {

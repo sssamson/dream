@@ -54,7 +54,7 @@ $config['12474_services'] = array(
 $config['12474_store'] = array(
 
 	'main' => array('section'=>'Title', 'subsection'=>'Description', 'order'=>'Position'),
-	
+
 	'element' => array()
 
 );
@@ -63,7 +63,7 @@ $config['12474_store'] = array(
 $config['12474_portfolio'] = array(
 
 	'main' => array('section'=>'Title', 'subsection'=>'Description', 'order'=>'Position'),
-	
+
 	'element' => array('image'=>'Image', 'category'=>'Categories', 'section'=>'Title', 'order'=>'Position on Page')
 
 );
@@ -319,7 +319,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 1;
+$config['log_threshold'] = 0;
 
 /*
 |--------------------------------------------------------------------------

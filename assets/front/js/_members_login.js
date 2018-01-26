@@ -10,7 +10,9 @@ function Members() {
 Members.prototype = {
   bind_actions : function() {
     var self = this;
-    
+
+    jQuery('#login_error').hide();
+
     // form validator
     $.validate({
       form : '#data_form_login',
@@ -44,7 +46,7 @@ Members.prototype = {
       url = "/member/login";
     } else if (form_contents['type'] = 'register') {
       next_page = "/member/register";
-    }  
+    }
 
     jQuery.ajax({
         url: url,
@@ -62,13 +64,13 @@ Members.prototype = {
               window.location.href = data.url;
             } else if (form_contents['type'] = 'register') {
               next_page = "/member/register";
-            } 
+            }
           } else {
             if (form_contents['type'] = 'login') {
               jQuery('#login_error').show();
             } else if (form_contents['type'] = 'register') {
               next_page = "/member/register";
-            } 
+            }
           }
         },
         complete : function() {

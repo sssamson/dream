@@ -23,7 +23,7 @@ class Main extends ME_Controller {
     redirect('/admin/', 'refresh');
   }
 
-	public function dologin() 
+	public function dologin()
 	{
 		$this->page['template'] = 'default_json.php';
 		$form_values 	= json_decode($this->input->post('form_values',TRUE));
@@ -40,10 +40,10 @@ class Main extends ME_Controller {
 				$validate = TRUE;
 				$message = '';
 			}
-			
+
 		}
-		
-		$return['status'] 	= $validate;;
+
+		$return['status'] 	= $validate;
     $return['url'] 			= $redirect_url;
     $return['message'] 	= $message;
 
@@ -51,4 +51,11 @@ class Main extends ME_Controller {
 
 	}
 
+	public function error()
+	{
+		$this->page['template'] = 'default_json.php';
+		$return['message'] 	= $this->session->error;
+		$return['status'] 	= TRUE;
+		$this->load->view('elements_default/json', compact('return'));
+	}
 }

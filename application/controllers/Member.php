@@ -17,7 +17,7 @@ class Member extends ME_Controller {
 
   public function index()
   {
-    $this->page['js'][] = '/front/js/_members';
+    $this->page['js'][] = '/front/js/_members_login';
     $this->page['title'] = 'Log in';
     $this->load->view('members/login');
   }
@@ -56,20 +56,62 @@ class Member extends ME_Controller {
 		$this->load->view('members/account',$params);
 	}
 
-  public function update_password()
+	public function orders()
+	{
+    $this->page['js'][] = '/front/js/_members_orders';
+    $this->page['require_login'] = TRUE;
+    $client_id = $this->session->user_id;
+    $params['client'] = $this->client_model->client_by_id($client_id);
+		$params['data'] = $this->store_model->order_by_id($client_id);
+		$this->load->view('members/orders',$params);
+	}
+
+	public function update_account()
+	{
+		$db = 'clients';
+		$this->page['require_login'] = TRUE;
+
+		$this->page['template'] = 'default_json.php';
+		$form_values = json_decode($this->input->post('form_values',TRUE));
+
+		$sql_values = array(
+		  'id' 				=> $this->session->user_id,
+			'firstname' => $form_values->firstname,
+			'lastname' 	=> $form_values->lastname,
+			'phone' 		=> $form_values->phone,
+			'street' 		=> $form_values->street,
+			'state' 		=> $form_values->state,
+			'zip' 			=> $form_values->zip,
+			'country' 	=> $form_values->country,
+			'company' 	=> $form_values->company,
+			'db_name'		=> $db
+		);
+
+		$results = $this->service_model->db_update($sql_values);
+
+		$return['status'] = TRUE;
+		$this->load->view('elements_default/json', compact('return'));
+	}
+
+  public function update_credentails()
   {
     $db = 'clients';
-
+		$this->page['require_login'] = TRUE;
     $this->page['template'] = 'default_json.php';
     $form_values = json_decode($this->input->post('form_values',TRUE));
 
-    $sql_values['id'] = $this->session->user_id;
-    $sql_values['password'] = $form_values->password;
-    $sql_values['db_name'] = $db;
+		if ($this->client_model->email_not_used($form_values->email,$this->session->user_id)) {
+			$sql_values['email'] = $form_values->email;
+			$sql_values['id'] = $this->session->user_id;
+			$sql_values['password'] = $form_values->password;
+			$sql_values['db_name'] = $db;
+			$results = $this->service_model->db_update($sql_values);
+			$return['status'] = TRUE;
+		} else {
+			$return['message']='Email is current used by anoter member';
+			$return['status'] = FALSE;
+		}
 
-    $results = $this->service_model->db_update($sql_values);
-    
-    $return['status'] = TRUE;
     $this->load->view('elements_default/json', compact('return'));
   }
 

@@ -83,3 +83,9 @@ ERROR - 2018-01-24 11:12:56 --> 404 Page Not Found: Assets/vendor
 ERROR - 2018-01-24 11:13:04 --> 404 Page Not Found: Assets/vendor
 ERROR - 2018-01-24 11:13:04 --> 404 Page Not Found: Assets/vendor
 ERROR - 2018-01-24 11:13:04 --> 404 Page Not Found: Assets/vendor
+ERROR - 2018-01-24 14:19:53 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): No such file or directory /Users/conradsage/sites/admin/www/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2018-01-24 14:19:53 --> Unable to connect to the database
+ERROR - 2018-01-24 14:19:55 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): No such file or directory /Users/conradsage/sites/admin/www/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2018-01-24 14:19:55 --> Unable to connect to the database
+ERROR - 2018-01-24 14:19:56 --> 404 Page Not Found: Faviconico/index
+ERROR - 2018-01-24 14:20:16 --> 404 Page Not Found: Assets/img
