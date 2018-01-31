@@ -1142,17 +1142,13 @@ function dbdate_less_now($dbdate)
 function current_date()
 {
 	$format = array();
-	$format['datetime'] = $format['date'] = $format['time'] = $format['calendar'] = '';
 
-	try {
-		$dt = new DateTime();
-		$format['datetime'] = $dt->format('D, M jS g:ia');
-		$format['date'] = $dt->format('Y-m-d');
-		$format['time'] = $dt->format('g:i A');
-		$format['calendar'] = $dt->format('c');
-	} catch (Exception $e) {
-
-	}
+	$dt = new DateTime();
+	$format['datetime'] = $dt->format('D, M jS g:ia');
+	$format['db'] = $dt->format('Y-m-d H:i:s');
+	$format['date'] = $dt->format('Y-m-d');
+	$format['time'] = $dt->format('g:i A');
+	$format['calendar'] = $dt->format('c');
 
 	return $format;
 }

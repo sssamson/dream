@@ -4,7 +4,7 @@
       <?php
       if (!empty($page)) {
         echo '<h1>'.ucfirst($page).'</h1>';
-      } 
+      }
       ?>
     </div>
     <div class="col-md-6"></div>
@@ -35,23 +35,23 @@
                   <td>$<?= $element['total'] ?></td>
                   <td><?= $element['status'] ?></td>
                   <td>
-                    <!-- Edit -->
-                    <button 
-                      data-id="<?= $element['id'] ?>" 
-                      data-toggle="tooltip" 
-                      title="View / Update Status" 
-                      type="button" 
+                    <!-- View -->
+                    <button
+                      data-id="<?= $element['id'] ?>"
+                      data-toggle="tooltip"
+                      title="View / Update Status"
+                      type="button"
                       class="btn-loading btn btn-primary btn-sm view_order">
                       <i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
                     <!-- Delete -->
-                    <button 
-                      data-title="$<?= $element['total'] ?>" 
-                      data-id="<?= $element['id'] ?>" 
-                      data-toggle="tooltip" 
-                      title="Delete" 
-                      type="button" 
-                      class="btn-loading btn btn-danger btn-sm order_delete" 
+                    <button
+                      data-title="$<?= $element['total'] ?>"
+                      data-id="<?= $element['id'] ?>"
+                      data-toggle="tooltip"
+                      title="Delete"
+                      type="button"
+                      class="btn-loading btn btn-danger btn-sm order_delete"
                       data-content="Title: $<?= $element['total'] ?>">
                       <i class="fa fa-remove" aria-hidden="true"></i>
                     </button>

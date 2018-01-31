@@ -1,0 +1,27 @@
+.side_menu .nav li a {
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  width: 100%;
+  margin: 3px;
+}
+
+.side_menu a.active {
+  background: #ddd;
+}
+
+.dataTables_wrapper .row {
+  width: 100%;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.table2,
+.table {
+    font-family: Verdana, sans-serif;
+    width: 100%;
+    border-top: 3px solid rgba(251, 2, 2, 0.32);
+}
+.table2 td,
+.table td {
+    word-wrap: break-word;
+}
