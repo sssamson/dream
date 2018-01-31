@@ -83,12 +83,12 @@
       </li>
 
       <li class="nav-item nav-dropdown">
-        <a class="nav-link nav-title nav-dropdown-toggle" href="#"><i class="icon-people"></i> Tasks</a>
+        <a class="nav-link nav-title nav-dropdown-toggle" href="#"><i class="icon-pin"></i> Tasks</a>
         <ul class="nav-dropdown-items">
           <?php $section = 'tasks' ?>
           <?php $id = 'tasks' ?>
           <li class="nav-item">
-            <a class="nav-link" data-url="<?= $id ?>" href="/admin/<?= $section ?>/?page=<?= $id ?>"><i class="icon-star"></i> Users Tasks</a>
+            <a class="nav-link" data-url="<?= $id ?>" href="/admin/<?= $section ?>/?page=<?= $id ?>"><i class="icon-check"></i> Users Tasks</a>
           </li>
         </ul>
       </li>

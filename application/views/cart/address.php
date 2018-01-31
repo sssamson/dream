@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-md-9" id="checkout">
       <div class="box">
-        <form id="data_form" method="post"> 
+        <form id="data_form" method="post">
           <h1>Delivery Address</h1>
           <?php
           $params = array('target'=>'checkout');
@@ -23,10 +23,10 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="firstname">Firstname</label>
-                    <input 
+                    <input
                         value="<?= !empty($data->firstname) ? $data->firstname : ''  ?>"
-                        type="text" 
-                        class="form-control" 
+                        type="text"
+                        class="form-control"
                         id="firstname"
                         name="firstname"
                         data-validation="required">
@@ -35,10 +35,10 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="lastname">Lastname</label>
-                    <input 
+                    <input
                         value="<?= !empty($data->lastname) ? $data->lastname : ''  ?>"
-                        type="text" 
-                        class="form-control" 
+                        type="text"
+                        class="form-control"
                         id="lastname"
                         name="lastname"
                         data-validation="required">
@@ -49,10 +49,10 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="street">Street</label>
-                    <input 
+                    <input
                         value="<?= !empty($data->street) ? $data->street : ''  ?>"
-                        type="text" 
-                        class="form-control" 
+                        type="text"
+                        class="form-control"
                         id="street"
                         name="street"
                         data-validation="required">
@@ -63,10 +63,10 @@
                 <div class="col-sm-6 col-md-3">
                   <div class="form-group">
                     <label for="city">City</label>
-                    <input 
+                    <input
                         value="<?= !empty($data->city) ? $data->city : ''  ?>"
-                        type="text" 
-                        class="form-control" 
+                        type="text"
+                        class="form-control"
                         id="city"
                         name="city"
                         data-validation="required">
@@ -75,10 +75,10 @@
                 <div class="col-sm-6 col-md-3">
                   <div class="form-group">
                     <label for="zip">ZIP</label>
-                    <input 
+                    <input
                         value="<?= !empty($data->zip) ? $data->zip : ''  ?>"
-                        type="text" 
-                        class="form-control" 
+                        type="text"
+                        class="form-control"
                         id="zip"
                         name="zip"
                         data-validation="required">
@@ -95,13 +95,10 @@
                 <div class="col-sm-6 col-md-3">
                   <div class="form-group">
                     <label for="country">Country</label>
-                    <input 
-                        value="<?= !empty($data->country) ? $data->country : ''  ?>"
-                        type="text" 
-                        class="form-control" 
-                        id="country"
-                        name="country"
-                        data-validation="required">
+                    <select name="state" class="form-control" required>
+                      <?php $county = (!empty($data->country) ? $data->country : 'US'); ?>
+                      <?= get_country_options($county)  ?>
+                    </select>
                   </div>
                 </div>
               </div>

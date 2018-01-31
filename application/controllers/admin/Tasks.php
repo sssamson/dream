@@ -8,10 +8,11 @@ class Tasks extends ME_Controller {
     parent::__construct();
     $this->page['require_login'] = TRUE;
     $this->load->model('task_model');
+		$this->load->model('client_model');
     $this->page['template']	= 'admin_html.php';
 		$this->page['section']	= 'tasks';
 		$this->page['section_url']	= '/admin/tasks/?page=tasks';
-    $this->page['js'][]	= '/member/js/_task';
+    $this->page['js'][]	= '/back/js/task';
   }
 
 	public function index()
@@ -36,7 +37,7 @@ class Tasks extends ME_Controller {
 	public function add()
 	{
 		try {
-
+			$params['clients'] = $this->client_model->clients();
 			$params['page'] = $this->page['title'] = 'Add Tasks';
 			$view = 'admin/task_edit';
 
@@ -83,7 +84,7 @@ class Tasks extends ME_Controller {
 		$this->page['template'] = 'default_json.php';
     $form_values = json_decode($this->input->post('form_values',TRUE));
 
-		$client_id = $this->session->user_id;
+		$client_id = $form_values->client_id;
 
 		$sql_values = array(
 		  'date_created' 	=> current_date()['db'],
@@ -117,7 +118,7 @@ class Tasks extends ME_Controller {
 		$client_id = $this->session->user_id;
 
 		if (!empty($id)) {
-        $results = $this->task_model->client_delete_task_by_id($id,$client_id);
+        $results = $this->client_model->db_delete($id,$db);
     }
 
     $return['status'] = TRUE;

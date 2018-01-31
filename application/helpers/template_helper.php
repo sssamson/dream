@@ -1028,7 +1028,7 @@ function get_country_options($country)
 										"ZW" => "Zimbabwe");
 
 	$html = '';
-
+	var_dump($county);
 	foreach($countries as $key => $value) {
 		$html .= '<option value="' . $key . '" title="' . htmlspecialchars($value) . '"';
 		$html .= ($country == $key) ? 'selected' : '';

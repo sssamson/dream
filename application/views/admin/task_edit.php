@@ -14,6 +14,15 @@
         <div class="card-block">
           <form id="data_form" method="post" enctype="multipart/form-data">
             <div class="form-group">
+              <label class="control-label" for="status">Client</label>
+              <select id="client_id" name="client_id" class="selectpicker form-control" data-validation="required">
+                <option></option>
+                <?php foreach ($clients as $client) { ?>
+                  <option value="<?= $client->id ?>"><?= $client->firstname ?> <?= $client->lastname ?>, <?= $client->email ?></option>
+                <?php } ?>
+              </select>
+            </div>
+            <div class="form-group">
               <label class="control-label" for="name">Summary</label>
               <input
                 value="<?= !empty($data->summary) ? $data->summary : ''  ?>"

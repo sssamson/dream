@@ -41,4 +41,5 @@ class Task_model extends ME_Model
 		$query = $this->db->query($sql,array($task_id,$client_id));
 		return  $query->row();
 	}
+
 }

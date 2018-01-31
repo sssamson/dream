@@ -99,8 +99,10 @@ class Tasks extends ME_Controller {
 			$sql_values['id'] = $form_values->id;
     	$sql_values['db_name'] = $db;
 
-      $results = $this->task_model->db_update($sql_values);
-
+			$is_mine = $this->task_model->client_task_by_id($sql_values['id'],$client_id);
+			if (!empty($is_mine)) {
+				$results = $this->task_model->db_update($sql_values);
+			}
     }
 
     $return['status'] = TRUE;

@@ -4,7 +4,7 @@
       <?php
       if (!empty($page)) {
         echo '<h1>'.ucfirst($page).'</h1>';
-      } 
+      }
       ?>
     </div>
   </div>
@@ -12,7 +12,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-block">
-          <form id="data_form" method="post" enctype="multipart/form-data"> 
+          <form id="data_form" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label class="control-label" for="status">Status</label>
               <select id="status" name="status" class="form-control selectpicker">
@@ -24,20 +24,20 @@
             </div>
             <div class="form-group">
               <label class="control-label" for="schedule">Schedule Date (<?= current_date()['date'] ?>)</label>
-              <input 
-                type="text" 
-                class="form-control" 
-                id="schedule" 
-                name="schedule" 
+              <input
+                type="text"
+                class="form-control"
+                id="schedule"
+                name="schedule"
                 data-date-format="yyyy-mm-dd"
                 data-validation="required">
             </div>
             <div class="form-group">
               <label class="control-label" for="time">Schedule Time (<?= current_date()['time'] ?>)</label>
-              <input 
-                type="text" 
-                class="form-control" 
-                id="time" 
+              <input
+                type="text"
+                class="form-control"
+                id="time"
                 name="time"
                 data-validation="required">
             </div>
@@ -55,7 +55,7 @@
               <select id="client_id" name="client_id" class="selectpicker form-control" data-validation="required">
                 <option></option>
                 <?php foreach ($clients as $client) { ?>
-                  <option value="<?= $client->id ?>"><?= $client->email ?></option>
+                  <option value="<?= $client->id ?>"><?= $client->firstname ?> <?= $client->lastname ?>, <?= $client->email ?></option>
                 <?php } ?>
               </select>
             </div>
