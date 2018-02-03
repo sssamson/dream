@@ -21,7 +21,7 @@ class Tasks extends ME_Controller {
 
 			$params['page'] = $this->page['title'] = 'Tasks';
 			$client_id = $this->session->user_id;
-			$params['data'] = $this->task_model->client_tasks($client_id);
+			$params['data'] = $this->task_model->tasks();
 			$view = 'admin/task_main';
 
 		}  catch (Exception $e) {
@@ -63,8 +63,8 @@ class Tasks extends ME_Controller {
 			}
 
 			$params['id'] = $id;
-			$client_id = $this->session->user_id;
-			$params['data'] = $this->task_model->client_task_by_id($id,$client_id);
+			$params['clients'] = $this->client_model->clients();
+			$params['data'] = $this->task_model->task_by_id($id);
 			$params['page'] = $this->page['title'] = 'Edit Task';
 			$view = 'admin/task_edit';
 
@@ -87,14 +87,16 @@ class Tasks extends ME_Controller {
 		$client_id = $form_values->client_id;
 
 		$sql_values = array(
-		  'date_created' 	=> current_date()['db'],
+		  'last_updated' 	=> current_date()['db'],
 		  'summary' 			=> !empty($form_values->summary) ? $form_values->summary : '',
 			'description' 	=> !empty($form_values->description) ? $form_values->description : '',
+			'status' 				=> !empty($form_values->status) ? $form_values->status : '',
 			'client_id' 		=> $client_id,
 		);
 
 		if (empty($form_values->id)) {
-
+			
+			$sql_values['date_created'] = current_date()['db'];
 			$results = $this->task_model->db_insert($db,$sql_values);
 
     } else {

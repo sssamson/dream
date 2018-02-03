@@ -1107,7 +1107,7 @@ function mdate_to_ddate($date)
 
 function dbdate_to_date($dbdate)
 {
-	return date('D, M jS g:ia', strtotime($dbdate));
+	return date('D, M j, Y, g:ia', strtotime($dbdate));
 }
 
 function dbdate_to_time($dbdate)

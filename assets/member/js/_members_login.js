@@ -11,7 +11,7 @@ Members.prototype = {
   bind_actions : function() {
     var self = this;
 
-    jQuery('#login_error').hide();
+    $('#login_error').hide();
 
     // form validator
     $.validate({

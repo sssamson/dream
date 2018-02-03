@@ -18,8 +18,17 @@
               <select id="client_id" name="client_id" class="selectpicker form-control" data-validation="required">
                 <option></option>
                 <?php foreach ($clients as $client) { ?>
-                  <option value="<?= $client->id ?>"><?= $client->firstname ?> <?= $client->lastname ?>, <?= $client->email ?></option>
+                  <option value="<?= $client->id ?>" <?= (!empty($data->client_id) && $data->client_id==$client->id) ? 'selected' : '' ?>><?= $client->firstname ?> <?= $client->lastname ?>, <?= $client->email ?></option>
                 <?php } ?>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="status"><b>Status</b></label>
+              <select id="status" name="status" class="selectpicker form-control">
+                <option value="pending" <?= (!empty($data->status) && $data->status=='pending') ? 'selected' : '' ?>>Pending</option>
+                <option value="active" <?= (!empty($data->status) && $data->status=='active') ? 'selected' : '' ?>>Active</option>
+                <option value="fulfilled" <?= (!empty($data->status) && $data->status=='fulfilled') ? 'selected' : '' ?>>Fulfilled</option>
+                <option value="cancelled" <?= (!empty($data->status) && $data->status=='cancelled') ? 'selected' : '' ?>>Cancelled</option>
               </select>
             </div>
             <div class="form-group">

@@ -21,7 +21,9 @@
           <table class="table table-hover table-striped">
                 <thead>
                   <tr>
-                    <th>Date</th>
+                    <th>Id</th>
+                    <th>Created</th>
+                    <th>Updated</th>
                     <th>Summary</th>
                     <th>Status</th>
                     <th data-sortable="false">Action</th>
@@ -30,7 +32,9 @@
                 <tbody>
                   <?php foreach ($data as $element) { ?>
                     <tr>
-                      <td><?= $element->date_created ?></td>
+                      <td><?= $element->id ?></td>
+                      <td><?= dbdate_to_date($element->date_created) ?></td>
+                      <td><?= dbdate_to_date($element->last_updated) ?></td>
                       <td><?= $element->summary ?></td>
                       <td><?= $element->status ?></td>
                       <td>

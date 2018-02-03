@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
     ?>
   </head>
 
-  <body class="app flex-row align-items-center">
+  <body class="app flex-row align-items-center bgimage">
     <div class="container">
       <?= $page['content'] ?>
     </div>

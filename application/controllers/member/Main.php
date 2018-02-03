@@ -17,9 +17,9 @@ class Main extends ME_Controller {
 
   public function index()
   {
-    $this->page['js'][] = '/account/js/_members_login';
+    $this->page['js'][] = '/member/js/_members_login';
     $this->page['title'] = 'Log in';
-    $this->load->view('members/login');
+    $this->load->view('member/login');
   }
 
   public function login()
@@ -53,7 +53,7 @@ class Main extends ME_Controller {
     $this->page['require_login'] = TRUE;
     $client_id = $this->session->user_id;
     $params['data'] = $this->client_model->client_by_id($client_id);
-		$this->load->view('members/account',$params);
+		$this->load->view('member/account',$params);
 	}
 
 	public function orders()
@@ -62,7 +62,7 @@ class Main extends ME_Controller {
     $this->page['require_login'] = TRUE;
     $client_id = $this->session->user_id;
 		$params['data'] = $this->store_model->customer_orders($client_id);
-		$this->load->view('members/orders',$params);
+		$this->load->view('member/orders',$params);
 	}
 
 	public function view_order()
@@ -73,7 +73,7 @@ class Main extends ME_Controller {
 		$client_id = $this->session->user_id;
 		$params['id'] = $id;
 		$params['data'] = $this->store_model->order_by_id($id);
-		$this->load->view('members/order_view',$params);
+		$this->load->view('member/order_view',$params);
 	}
 
 	public function update_account()
