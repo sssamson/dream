@@ -7,89 +7,78 @@ $config['shopping_url'] = '/#store';
 
 $config['web_sections'] = array(
 	'home' 					=> 'Home',
+	'about' 				=> 'Who Are We',
 	'services' 			=> 'Services',
-	'store' 				=> 'Store',
-	'feature_work' 	=> 'Feature Work',
 	'portfolio' 		=> 'Portfolio',
-	'quote' 				=> 'Quote',
-	'links' 				=> 'Links',
-	'team' 					=> 'Team',
-	'call_out' 			=> 'Call Out',
+	'testimonials' 	=> 'Testimonials',
+	'blog' 					=> 'Blog',
+	'bio' 					=> 'Bio',
 	'contact_us' 		=> 'Contact Us'
 );
 
 /* -- List of all Permission -- */
 $config['12474_full_permissions'] = array(
 
-	'main' => array('image'=>'Image', 'video'=>'Video', 'section'=>'Title', 'subsection'=>'Description', 'order'=>'Position on Page'),
+	'main' => array('image'=>'Image', 'video'=>'Video', 'section'=>'Title', 'subsection'=>'Description'),
 
 	'element' => array('image'=>'Image', 'video'=>'Video', 'icon'=>'Icon', 'category'=>'Categories','section'=>'Title', 'subsection'=>'Description', 'order'=>'Position on Page', 'h1'=>'Sub Description 1', 'h2'=>'Sub Description 2')
 );
 
-/* -- Home -- */
 $config['12474_home'] = array(
 
-	'main' => array('section'=>'Title', 'subsection'=>'Description', 'order'=>'Position on Page'),
+	'main' => array('section'=>'Title', 'subsection'=>'Description'),
 
 	'element' => array()
 );
 
-/* -- Feature Work -- */
-$config['12474_feature_work'] = array(
+$config['12474_about'] = array(
 
-	'main' => array('image'=>'Image', 'icon'=>'Icon', 'section'=>'Title', 'subsection'=>'Description', 'order'=>'Position'),
+	'main' => array('section'=>'Title', 'subsection'=>'Description'),
 
-	'element' => array('icon'=>'Icon', 'section'=>'Title', 'subsection'=>'Description', 'order'=>'Position on Page')
+	'element' => array()
 );
 
-/* -- Services -- */
 $config['12474_services'] = array(
 
-	'main' => array('image'=>'Image','video'=>'Video','icon'=>'Icon', 'section'=>'Title', 'subsection'=>'Description', 'order'=>'Position'),
+	'main' => array('section'=>'Title'),
 
-	'element' => array('icon'=>'Icon', 'section'=>'Title', 'subsection'=>'Description', 'order'=>'Position on Page','h1'=>'Page')
+	'element' => array('icon'=>'Icon', 'section'=>'Title', 'subsection'=>'Intro', 'h1'=>'Article', 'order'=>'Position on Page')
 );
 
-/* -- Store -- */
-$config['12474_store'] = array(
-
-	'main' => array('section'=>'Title', 'subsection'=>'Description', 'order'=>'Position'),
-
-	'element' => array()
-
-);
-
-/* -- Portfolio -- */
 $config['12474_portfolio'] = array(
 
-	'main' => array('section'=>'Title', 'subsection'=>'Description', 'order'=>'Position'),
-
-	'element' => array('image'=>'Image', 'category'=>'Categories', 'section'=>'Title', 'order'=>'Position on Page')
-
-);
-
-/* -- Quote -- */
-$config['12474_quote'] = array(
-
-	'main' => array('image'=>'Image', 'section'=>'Title', 'subsection'=>'Description'),
+	'main' => array('section'=>'Title'),
 
 	'element' => array()
 
 );
 
-/* -- Team -- */
-$config['12474_team'] = array(
+$config['12474_testimonials'] = array(
 
-	'main' => array('section'=>'Title', 'subsection'=>'Description', 'order'=>'Position'),
+	'main' => array('section'=>'Title'),
 
-	'element' => array('image'=>'Image', 'section'=>'Name', 'subsection'=>'Title', 'order'=>'Position on Page', 'h1'=>'Description', 'h2'=>'Email')
+	'element' => array('image'=>'Image', 'section'=>'Name', 'subsection'=>'Title', 'h1'=>'Description', 'order'=>'Position on Page')
 
 );
 
-/* -- Call Out -- */
-$config['12474_call_out'] = array(
+$config['12474_blog'] = array(
 
-	'main' => array('image'=>'Background Image', 'subsection'=>'Call Out'),
+	'main' => array('section'=>'Title', 'subsection'=>'Description'),
+
+	'element' => array()
+
+);
+
+$config['12474_bio'] = array(
+
+	'main' => array('section'=>'Title', 'subsection'=>'Description'),
+
+	'element' => array()
+);
+
+$config['12474_contact_us'] = array(
+
+	'main' => array('section'=>'Title', 'subsection'=>'Description'),
 
 	'element' => array()
 
@@ -119,7 +108,7 @@ $config['approved_folders'] = array("page", "store", "blog");
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/';
+$config['base_url'] = 'http://cartermedia.net/';
 
 /*
 |--------------------------------------------------------------------------

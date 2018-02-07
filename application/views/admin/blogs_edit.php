@@ -36,7 +36,7 @@
             <div class="form-group">
               <label class="control-label" for="categories">Category</label>
               <select id="categories" name="cat_id" class="selectpicker form-control">
-                <option value="">None</option>
+                <option value="0">None</option>
                 <?php foreach ($categories as $cat) { ?>
                   <option value="<?= $cat->id ?>"><?= $cat->name ?></option>
                 <?php } ?>

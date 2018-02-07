@@ -68,10 +68,11 @@ class Blogs extends ME_Controller {
 		try {
 
 			if (empty($blog_id)) {
-				$error_message = 'Article Id is required';
+				$error_message = 'Blog Id is required';
    			throw new Exception($error_message);
 			}
 
+			$params['categories'] = $this->blog_model->categories();
 			$params['id'] = $blog_id;
 			$params['data'] = $this->blog_model->blog_by_id($blog_id);
 			$page = 'Edit Article';
@@ -102,7 +103,7 @@ class Blogs extends ME_Controller {
 
 			$sql_values = array(
 			  'date' 			=> !empty($form_values->date) ? mdate_to_ddate($form_values->date.' '.$form_values->time) : '',
-			  'cat_id' 		=> !empty($form_values->cat_id) ? $form_values->cat_id : NULL,
+			  'cat_id' 		=> !empty($form_values->cat_id) ? $form_values->cat_id : 0,
 			  'title' 		=> !empty($form_values->title) ? $form_values->title : NULL,
 			  'intro' 		=> !empty($form_values->intro) ? $form_values->intro : NULL,
 			  'content' 	=> !empty($form_values->content) ? $form_values->content : NULL

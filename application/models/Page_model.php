@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Page_model extends ME_Model
-{	
+{
 	function __construct()
 	{
 		parent::__construct();
@@ -9,9 +9,12 @@ class Page_model extends ME_Model
 
 	public function all_pages()
 	{
-		$sql = "SELECT * FROM page";
-		$query = $this->db->query($sql);
-		return  $query->result();
+		$web_sections = array();
+		$web_config_sections = $this->config->item('web_sections');
+		foreach ($web_config_sections as $id => $name) {
+				$web_sections[] = $id;
+		}
+		return $web_sections;
 	}
 
 	public function page($tag)
@@ -44,7 +47,7 @@ class Page_model extends ME_Model
 		}
 
 		$page_header = $this->page_header_by_id($page_element->page_id);
-		
+
 		if (empty($page_header)) {
 			$error_message = 'Page not Found';
  			throw new Exception($error_message);
@@ -72,9 +75,9 @@ class Page_model extends ME_Model
 
 	public function page_elements($page_id)
 	{
-		$sql = "SELECT 
-					page_elements.*, 
-					page_categories.name as category 
+		$sql = "SELECT
+					page_elements.*,
+					page_categories.name as category
 				FROM page_elements
 				LEFT JOIN page_categories ON page_elements.category_id = page_categories.id
 				WHERE page_elements.page_id=?";
@@ -85,9 +88,9 @@ class Page_model extends ME_Model
 
 	public function page_element($element_id)
 	{
-		$sql = "SELECT 
-							page_elements.*, 
-							page_categories.name as category 
+		$sql = "SELECT
+							page_elements.*,
+							page_categories.name as category
 						FROM page_elements
 						LEFT JOIN page_categories ON page_elements.category_id = page_categories.id
 						WHERE page_elements.id=?";
@@ -102,7 +105,7 @@ class Page_model extends ME_Model
 		$page_element = $this->page_element($element_id);
 		$page = $this->page_header_by_id($page_element->page_id);
 		return $page->tag;
-	}	
+	}
 
 	public function categories($page_id)
 	{
@@ -118,10 +121,10 @@ class Page_model extends ME_Model
 		return $query->row();
 	}
 
-	public function post_element_category($page_id, $category) 
+	public function post_element_category($page_id, $category)
 	{
 		if (is_numeric($category)) {
-			
+
 			$cat_id = $category;
 
 		} else {

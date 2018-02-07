@@ -36,7 +36,7 @@ class Main extends ME_Controller {
 
 			if (!empty($client_id)) {
 				$this->session->set_userdata('admin_id', $client_id);
-				$redirect_url = '/admin/general/?page=dashboard';
+				$redirect_url = '/admin/pages/?page=home';
 				$validate = TRUE;
 				$message = '';
 			}
@@ -49,6 +49,30 @@ class Main extends ME_Controller {
 
     $this->load->view('elements_default/json', compact('return'));
 
+	}
+
+	public function send_mail()
+	{
+		$this->page['template'] = 'default_json.php';
+
+		$this->load->library('email');
+		$this->email->from('info@cartermedia.net', 'CarterMedia.net');
+		//$this->email->to('dontaye@cartermedia.net');
+		$this->email->to('destinysage@gmail.com');
+		$this->email->subject('Contact Form CarterMedia.net');
+		$message = "";
+		$message .= "Name: ".$this->input->post('name',TRUE). "\r\n";
+		$message .= "Email: ".$this->input->post('email',TRUE). "\r\n";
+		$message .= "Phone: ".$this->input->post('phone',TRUE). "\r\n";
+		$message .= "--- --- --- ---" . "\r\n";
+		$message .= $this->input->post('message',TRUE);
+
+		$this->email->message($message);
+
+		$this->email->send();
+
+		$return['status'] 	= TRUE;
+		$this->load->view('elements_default/json', compact('return'));
 	}
 
 	public function error()

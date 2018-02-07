@@ -1,12 +1,26 @@
-<header class="header" id="header">
-	<div class="container">
-		<figure class="logo animated fadeInDown delay-07s">
-			<a href="#"><img src="img/logo.png" alt=""></a>
-		</figure>
-		<h1 class="animated fadeInDown delay-07s"><?= $data['page_header']->section ?></h1>
-		<ul class="we-create animated fadeInUp delay-1s">
-			<li><?= $data['page_header']->subsection ?></li>
-		</ul>
-		<a class="link animated fadeInUp delay-1s servicelink" href="#service">Get Started</a>
-	</div>
+<!-- START HOMEPAGE DESIGN AREA -->
+<header id="home" class="welcome-area">
+    <?php
+    $params = array('page'=>'main');
+    $this->view('elements_default/menu',$params);
+    ?>
+    <div class="welcome-image-area">
+        <div class="display-table">
+            <div class="display-table-cell">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="header-text text-center">
+                                <div class="profession-name"><?= $data['page_header']->section ?></div>
+                                <h2><?= $data['page_header']->subsection ?></h2>
+                                <a href="#contact" class="smoth-scroll hire-me-btn">Contact Me &gt;</a>
+                                <a href="#contact" class="smoth-scroll contact-me-btn">Hire Me &gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
+<!-- / END HOMEPAGE DESIGN AREA -->
