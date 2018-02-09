@@ -108,6 +108,10 @@ Version      : 1.0
 
 @media only screen and (max-width: 767px) {
 
+    .social {
+      padding: 10px;
+      overflow: hidden;
+    }
     .welcome-image-area {
         position: relative;
         height: 100%;

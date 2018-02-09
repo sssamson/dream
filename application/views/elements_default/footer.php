@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center wow fadeInUp" data-wow-delay="1s">
-                <span>&copy; 2018 CarterMedia.net</span>
+                <span>&copy; 2018 CarterMedia.net | Site Developed by <a class="white" target="_blank" href="http://www.hamulti.com/">Hamulti.com</a></span>
                 <!-- START OF SOCIAL MEDIA AREA -->
                 <div class="social">
                     <strong>Follow Us</strong>

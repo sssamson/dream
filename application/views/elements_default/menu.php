@@ -31,9 +31,9 @@ if ($page == 'blog') {
                                 <li class="active"><a class="smoth-scroll" href="<?= $pre_link ?>#home">Home <div class="ripple-wrapper"></div></a></li>
                                 <li><a class="smoth-scroll" href="<?= $pre_link ?>#about">About</a></li>
                                 <li><a class="smoth-scroll" href="<?= $pre_link ?>#portfolio">Portfolio</a></li>
-                                <li><a class="smoth-scroll" href="<?= $pre_link ?>#testimonial">Testimonial</a></li>
-                                <li><a class="smoth-scroll" href="<?= $pre_link ?>#bio">Bio</a></li>
+                                <li><a class="smoth-scroll" href="<?= $pre_link ?>#testimonial">Testimonials</a></li>
                                 <li><a class="smoth-scroll" href="<?= $pre_link ?>#blog">Blog</a></li>
+                                <li><a class="smoth-scroll" href="<?= $pre_link ?>#bio">Bio</a></li>
                                 <li><a class="smoth-scroll" href="<?= $pre_link ?>#contact">Contact</a></li>
                             </ul>
                         </div>

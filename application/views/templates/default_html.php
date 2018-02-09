@@ -10,22 +10,22 @@
     <!-- PAGE TITLE -->
     <title><?= $page['title'] ?></title>
     <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="assets/front/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/front/bootstrap/css/bootstrap.min.css">
     <!-- ALL GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:300,400,700&subset=latin-ext" rel="stylesheet">
     <!-- FONT AWESOME CSS -->
-    <link rel="stylesheet" href="assets/front/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/front/fonts/font-awesome.min.css">
     <!-- OWL CAROSEL CSS -->
-    <link rel="stylesheet" href="assets/front/owlcarousel/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/front/owlcarousel/css/owl.theme.css">
+    <link rel="stylesheet" href="/assets/front/owlcarousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/front/owlcarousel/css/owl.theme.css">
     <!-- MAGNIFIC CSS -->
-    <link rel="stylesheet" href="assets/front/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/front/css/magnific-popup.css">
     <!-- ANIMATE CSS -->
-    <link rel="stylesheet" href="assets/front/css/animate.min.css">
+    <link rel="stylesheet" href="/assets/front/css/animate.min.css">
     <!-- MAIN STYLE CSS -->
-    <link rel="stylesheet" href="assets/front/css/style.css">
+    <link rel="stylesheet" href="/assets/front/css/style.css">
     <!-- RESPONSIVE CSS -->
-    <link rel="stylesheet" href="assets/front/css/responsive.css">
+    <link rel="stylesheet" href="/assets/front/css/responsive.css">
 </head>
 <body>
   <!-- START PRELOADER AREA-->
@@ -54,19 +54,22 @@
   <!-- LATEST JQUERY -->
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
   <!-- BOOTSTRAP JS -->
-  <script src="assets/front/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/assets/front/bootstrap/js/bootstrap.min.js"></script>
   <!-- OWL CAROUSEL JS  -->
-  <script src="assets/front/owlcarousel/js/owl.carousel.min.js"></script>
+  <script src="/assets/front/owlcarousel/js/owl.carousel.min.js"></script>
   <!-- MIXITUP JS -->
-  <script src="assets/front/js/jquery.mixitup.js"></script>
+  <script src="/assets/front/js/jquery.mixitup.js"></script>
   <!-- PARALLAX JS -->
-  <script src="assets/front/js/jquery.stellar.min.js"></script>
+  <script src="/assets/front/js/jquery.stellar.min.js"></script>
   <!-- PROGRESSBAR JS -->
-  <script src="assets/front/js/jquery.appear.js"></script>
+  <script src="/assets/front/js/jquery.appear.js"></script>
   <!-- MAGNIFICANT JS -->
-  <script src="assets/front/js/jquery.magnific-popup.min.js"></script>
+  <script src="/assets/front/js/jquery.magnific-popup.min.js"></script>
   <!-- YOUTUBE JS -->
-  <script src="assets/front/js/jquery.mb.YTPlayer.min.js"></script>
+  <script src="/assets/front/js/jquery.mb.YTPlayer.min.js"></script>
+
+  <script src="/assets/vendor/formvalidator/jquery.form-validator.min.js"></script>
+
   <script type="text/javascript">
       $('.player').mb_YTPlayer();
   </script>

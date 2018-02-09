@@ -34,5 +34,23 @@
         <?php } ?>
 
     </div>
+    <div class="container">
+      <div class="row blog-row social-media">
+        <div class="col-xs-12 col-sm-6 col-md-6 social">
+          <div class="fb-page" data-href="https://www.facebook.com/CarterMediaGroup" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/CarterMediaGroup" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CarterMediaGroup">The Carter Media Group, LLC.</a></blockquote></div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 social">
+          <a class="twitter-timeline" data-height="500" href="https://twitter.com/DontayeCarter?ref_src=twsrc%5Etfw">Tweets by DontayeCarter</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </div>
 </section>
 <!-- / END BLOG DESIGN AREA -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1894759337440913&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

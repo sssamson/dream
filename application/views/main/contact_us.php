@@ -29,7 +29,7 @@
                 <!-- START CONTACT FORM AREA -->
                 <div class="column form-column col-md-6 col-sm-12 col-xs-12">
                     <div class="contact-form default-form">
-                        <form method="post" onsubmit="return false">
+                        <form method="post" id="contact_form">
                             <div class="row clearfix">
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <div class="group-inner">
