@@ -18,8 +18,9 @@ class Main extends ME_Controller {
 
 		$params = array();
 		$params['data']=$this->page_model->page('home');
-		$this->load->view('main/home',$params);
+		$this->load->view('main/controller',$params);
 
+    /*
 		$excluded_page = array('home','footer');
 		$pages = $this->page_model->all_pages();
 
@@ -35,7 +36,7 @@ class Main extends ME_Controller {
 				$this->load->view('main/'.$page_tag,$params);
 			}
 		}
-
+    */
 	 }
 
 	public function blog_category()
