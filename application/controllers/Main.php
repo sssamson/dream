@@ -22,13 +22,13 @@ class Main extends ME_Controller {
 		$params['data']=$this->page_model->page('home');
 		$this->load->view('main/home',$params);
 
-		$params = array();
-		$params['data']=$this->page_model->page('nav');
-		$this->load->view('main/nav',$params);
-
+		//$params = array();
+		//$params['data']=$this->page_model->page('nav');
+		//$this->load->view('main/nav',$params);
+    /*
 		$excluded_page = array('home','footer','nav');
 		$pages = $this->page_model->all_pages();
-		
+
 		foreach ($pages as $page) {
 			if (!in_array($page->tag, $excluded_page)) {
 				$params = array();
@@ -42,15 +42,15 @@ class Main extends ME_Controller {
 				$this->load->view('main/'.$page->tag,$params);
 			}
 		}
+    */
+		//$params = array();
+		//$params['services'] = $this->store_model->products('service');
+		//$this->load->view('main/store_service',$params);
 
-		$params = array();
-		$params['services'] = $this->store_model->products('service');
-		$this->load->view('main/store_service',$params);
+		//$params = array();
+		//$params['data']=$this->page_model->page('footer');
+		//$this->load->view('main/footer',$params);
 
-		$params = array();
-		$params['data']=$this->page_model->page('footer');
-		$this->load->view('main/footer',$params);
-		
 	 }
 
 }

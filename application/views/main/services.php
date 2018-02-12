@@ -1,25 +1,93 @@
-<section class="main-section" id="service">
-  <!--main-section-start-->
+<!-- SERVICES -->
+<section class="background-grey">
   <div class="container">
-    <h2><?= $data['page_header']->section ?></h2>
-    <h6><?= $data['page_header']->subsection ?></h6>
+    <div class="heading heading-center">
+      <h2>SERVICES</h2>
+      <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+    </div>
     <div class="row">
-      <div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
-        <?php foreach($data['page_elements'] as $element) { ?>
-          <div class="service-list">
-            <div class="service-list-col1">
-              <?= display_media($element) ?>
-            </div>
-            <div class="service-list-col2">
-              <h3><?= $element->section ?></h3>
-              <p><?= $element->subsection ?></p>
-            </div>
+      <div class="col-md-4" data-animation="fadeInUp" data-animation-delay="0">
+        <div class="icon-box effect medium border small">
+          <div class="icon">
+            <a href="#"><i class="fa fa-plug"></i></a>
           </div>
-        <?php } ?>
+          <h3>Powerful template</h3>
+          <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+        </div>
       </div>
-      <figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
-        <?= display_media($data['page_header']) ?>
-      </figure>
+      <div class="col-md-4" data-animation="fadeInUp" data-animation-delay="200">
+        <div class="icon-box effect medium border small">
+          <div class="icon">
+            <a href="#"><i class="fa fa-desktop"></i></a>
+          </div>
+          <h3>Flexible Layouts</h3>
+          <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-animation="fadeInUp" data-animation-delay="400">
+        <div class="icon-box effect medium border small">
+          <div class="icon">
+            <a href="#"><i class="fa fa-cloud"></i></a>
+          </div>
+          <h3>Retina Ready</h3>
+          <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-animation="fadeInUp" data-animation-delay="600">
+        <div class="icon-box effect medium border small">
+          <div class="icon">
+            <a href="#"><i class="fa fa-lightbulb-o"></i></a>
+          </div>
+          <h3>Fast processing</h3>
+          <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-animation="fadeInUp" data-animation-delay="800">
+        <div class="icon-box effect medium border small">
+          <div class="icon">
+            <a href="#"><i class="fa fa-trophy"></i></a>
+          </div>
+          <h3>Unlimited Colors</h3>
+          <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-animation="fadeInUp" data-animation-delay="1000">
+        <div class="icon-box effect medium border small">
+          <div class="icon">
+            <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
+          </div>
+          <h3>Premium Sliders</h3>
+          <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-animation="fadeInUp" data-animation-delay="1200">
+        <div class="icon-box effect medium border small">
+          <div class="icon">
+            <a href="#"><i class="fa fa-rocket"></i></a>
+          </div>
+          <h3>Modern Design</h3>
+          <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-animation="fadeInUp" data-animation-delay="1400">
+        <div class="icon-box effect medium border small">
+          <div class="icon">
+            <a href="#"><i class="fa fa-flask"></i></a>
+          </div>
+          <h3>Clean Modern Code</h3>
+          <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-animation="fadeInUp" data-animation-delay="1600">
+        <div class="icon-box effect medium border small">
+          <div class="icon">
+            <a href="#"><i class="fa fa-umbrella"></i></a>
+          </div>
+          <h3>Free Updates & Support</h3>
+          <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+<!-- end: SERVICES -->
